@@ -1,0 +1,16 @@
+{% extends 'base.html' %} <!-- подключаем базовый шаблон -->
+{% load staticfiles %}
+{% block content %}
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <form id="login" action="" method="post">
+      {% csrf_token %}
+      <!-- as_p для того, чтобы каждый элемент формы был с новой строки -->
+        {{  form.as_p }}
+        <button type="submit">Зарегистрироваться</button>
+
+    </form>
+{% endblock %}
